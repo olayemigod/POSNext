@@ -18,6 +18,12 @@ describe("customer phone requirement", () => {
 		expect(settings).toMatch(/"require_customer_phone"[\s\S]{0,140}"default": "1"|"default": "1"[\s\S]{0,140}"require_customer_phone"/)
 	})
 
+	it("includes the phone policy in shared bootstrap settings", () => {
+		const constants = source("../../../../../pos_next/api/constants.py")
+		expect(constants).toContain('"require_customer_phone"')
+		expect(constants).toContain('"require_customer_phone": 1')
+	})
+
 	it("exposes the setting through the POS settings store", () => {
 		const store = source("../../../stores/posSettings.js")
 		expect(store).toContain("require_customer_phone: 1")
