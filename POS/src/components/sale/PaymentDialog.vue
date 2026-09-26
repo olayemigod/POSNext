@@ -1694,7 +1694,7 @@
 									/>
 								</svg>
 								<span>{{
-									isSubmitting ? __("Processing...") : __("Complete Payment")
+									isSubmitting ? __("Processing...") : paymentButtonText
 								}}</span>
 							</button>
 						</div>
