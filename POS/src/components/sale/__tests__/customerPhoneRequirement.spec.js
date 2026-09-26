@@ -13,7 +13,7 @@ function source(rel) {
 
 describe("customer phone requirement", () => {
 	it("defines a default-on POS Settings field", () => {
-		const settings = source("../../../../pos_next/pos_next/doctype/pos_settings/pos_settings.json")
+		const settings = source("../../../../../pos_next/pos_next/doctype/pos_settings/pos_settings.json")
 		expect(settings).toContain('"fieldname": "require_customer_phone"')
 		expect(settings).toMatch(/"require_customer_phone"[\s\S]{0,140}"default": "1"|"default": "1"[\s\S]{0,140}"require_customer_phone"/)
 	})
